@@ -1,16 +1,20 @@
 # 📦 Inventory NG (Frontend Angular)
 
-This is the **frontend** of the Inventory Management System app, developed with **Angular**. Allows you to add, edit, list, and delete products by connecting to a Spring Boot backend.
+This is the **frontend** of the Inventory Management System app, developed with **Angular**. It is designed to interact with the backend API to manage products in an inventory system.<br/>
+It provides a user-friendly interface for performing CRUD operations on the product data stored in a MySQL database.<br/>
+The frontend communicates with a Spring Boot REST API backend using HTTP requests. All CRUD operations performed from the interface are directly reflected in the database through the backend API.<br/>
+The forms to add or update products includes real-time validation to ensure data integrity before submitting. Fields are validated both on the frontend (using Angular's form validators) and on the backend (with Java validation annotations) to ensure consistency.
 
 ---
 
 ## 🚀 Tech stack
 
-- [Angular 17](https://angular.io/)
+- [Angular](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - Bootstrap 
 - Angular Router
 - Form validation with `FormsModule`
+- RxJS / HTTPClient (for API communication)
 
 ---
 
