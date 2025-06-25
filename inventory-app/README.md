@@ -1,7 +1,10 @@
 # 🔧 Inventory App (Backend Spring Boot)
 
 This is the **backend** of the Inventory Management Application, developed with **Spring Boot**.
-Exposes a REST API for performing CRUD operations on products.
+Exposes a REST API for performing CRUD operations on products. <br/>
+The application connects to a MySQL database where all product data is stored persistently. It uses JPA with Hibernate to map Java objects to database tables.<br/>
+If the database does not exist, it is created automatically. On application startup, the database schema is automatically updated **inventory-app/src/main/resources/data.sql**.<br/>
+Data validation is implemented on both the backend and frontend to ensure data integrity.
 
 ---
 
