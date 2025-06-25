@@ -1,0 +1,42 @@
+<!-- Main container -->
+<div class="container">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4eb898;">
+        <div class="container-fluid">
+            <!-- Title -->
+            <a class="navbar-brand" routerLink="products">
+                Inventory System
+            </a>
+            <!-- Collapse button that is only displayed if the screen is narrow  -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links container -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+
+                    <!-- Link to home page -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" 
+                        routerLink="products" routerLinkActive="active">Home</a>
+                    </li>  
+
+                    <!-- Link to 'add product' section -->  
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="add-product" 
+                        routerLinkActive="active">Add Product</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Router to display the requested page. See in app.routes.ts -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,69 @@
+<!-- Main container -->
+<div class="container">
+  <!-- Title -->
+  <div class="container text-center" style="margin: 30px;">
+    <h3>Edit Product</h3>
+  </div>
+
+  <!-- Form completed with the product data to modify -->
+  <form #productForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <!-- Form field for description (two-way binding) -->
+    <!-- Must not be null, min 2 and max 100 characters -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Product description</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="description" 
+        name="description" 
+        [(ngModel)]="product.description"
+        required
+        minlength="2"
+        maxlength="100"
+        title="Description is required and must be between 2 and 100 characters.">
+    </div>
+
+    <!-- Form field for price (two-way binding) -->
+    <!-- Must not be null, and must be positive or zero -->
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input 
+        type="number"
+        class="form-control" 
+        id="price" 
+        name="price" 
+        [(ngModel)]="product.price"
+        required
+        min="0"
+        step="0.01"
+        title="Price is required and must be 0 or higher.">
+    </div>
+
+    <!-- Form field for stock (two-way binding and validation) -->
+    <!-- Must not be null, and a non-negative integer -->
+    <div class="mb-3">
+      <label for="stock" class="form-label">Stock</label>
+      <input 
+        type="number" 
+        class="form-control" 
+        id="stock" 
+        name="stock" 
+        [(ngModel)]="product.stock"
+        required
+        min="0"
+        step="1"
+        title="Stock is required and must be 0 or greater.">
+    </div>
+
+    <!-- Button section. The user can save the changes or go back -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-warning btn-sm me-3" [disabled]="!productForm.valid">
+        Save
+      </button>
+      <a href="/" class="btn btn-danger btn-sm">
+        Back
+      </a>
+    </div>
+  </form>
+</div>
